@@ -44,13 +44,19 @@ export const homeSlice = createSlice({
 export const {changeStatus, loadEntries, loadEntry, hasError, reset} =
   homeSlice.actions;
 
+// Pega todos os conteúdos da API
 export const fetchAll = () => async (dispatch: AppDispatch) => {
   dispatch(changeStatus('loading'));
 
   try {
-    const {data} = await HomeService.all();
-    dispatch(loadEntries([data]));
-    dispatch(changeStatus('idle'));
+    const data = await HomeService.all();
+
+    if (data) {
+      dispatch(loadEntries([data])); 
+      dispatch(changeStatus('idle'));
+    } else {
+      dispatch(hasError(null));
+    }
   } catch (ex) {
     dispatch(hasError(ex));
     dispatch(reduxNotifyError(ex));

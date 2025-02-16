@@ -1,5 +1,6 @@
 import type { TargetEnvConfig, AppConfig } from '@app/types/Config';
 
+// Configurações base para a execução do servidor local
 const env = process.env.APP_ENV || 'development';
 const host = process.env.HOST || 'localhost';
 const port = process.env.PORT || 4000;

@@ -1,0 +1,39 @@
+.DesktopMenu {
+  display: none;
+}
+
+@media screen and ($mobileHorizontal) {
+  .DesktopMenu {
+    display: flex;
+    column-gap: 1rem;
+    color: $white;
+
+    a {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and ($tablet) {
+  .DesktopMenu {
+    display: flex;
+    column-gap: 1rem;
+    color: $white;
+
+    a {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and ($desktop) {
+  .DesktopMenu {
+    display: flex;
+    column-gap: 1rem;
+    color: $white;
+
+    a {
+      cursor: pointer;
+    }
+  }
+}

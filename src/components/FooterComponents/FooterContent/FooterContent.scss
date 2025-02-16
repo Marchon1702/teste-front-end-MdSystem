@@ -1,0 +1,114 @@
+.FooterContent {
+  max-width: 100vw;
+  width: 100%;
+  background: $darkGray;
+  color: $white;
+  padding: 3rem 1rem 0.5rem 1rem;
+  overflow-x: hidden;
+  position: relative;
+
+  .FooterContent__infos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    .FooterContent__list {
+      margin-bottom: 2.2rem;
+      .FooterContent__listTitle {
+        font-size: 1.2em;
+        margin-bottom: 2rem;
+      }
+
+      .FooterContent__ul-infos {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        list-style: none;
+
+        li {
+          font-weight: 300;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .FooterContent__divisor {
+    position: absolute;
+    left: 0;
+    display: block;
+    height: 1px;
+    width: 100vw;
+    background-color: $white;
+    margin-bottom: 0.5rem;
+  }
+
+  .FooterContent__copyrights {
+    display: block;
+    text-align: center;
+    font-size: 0.8em;
+    padding-top: 0.5rem;
+    column-gap: 0.3em;
+
+    .FooterContent__underline {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and ($mobileHorizontal) {
+  .FooterContent {
+    padding-left: 3rem;
+  }
+}
+
+@media screen and ($tablet) {
+  .FooterContent {
+
+    .FooterContent__infos {
+      display: flex;
+      flex-direction: row !important;
+      justify-content: center !important;
+      column-gap: 25rem !important;
+
+      .FooterContent__list:nth-of-type(1) {
+        order: 1;
+      }
+
+      .FooterContent__list:nth-of-type(2) {
+        order: 0;
+      }
+    }
+
+    .FooterContent__copyrights {
+      text-align: left !important;
+    }
+  }
+}
+
+@media screen and ($desktop) {
+  .FooterContent {
+    padding-left: 6rem;
+
+    .FooterContent__infos {
+      display: flex;
+      flex-direction: row !important;
+      justify-content: flex-start !important;
+      column-gap: 25rem !important;
+
+      .FooterContent__list:nth-of-type(1) {
+        order: 1;
+      }
+
+      .FooterContent__list:nth-of-type(2) {
+        order: 0;
+      }
+    }
+
+    .FooterContent__copyrights {
+      text-align: left !important;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.TopArea {
+  background: $darkGray;
+
+  .TopArea__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $darkGray;
+    padding: 1rem;
+
+    img {
+      max-width: 100%;
+      height: 30px;
+    }
+
+    .TopArea__menu-icon {
+      font-size: 2.2em;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and ($mobileHorizontal) {
+  .TopArea__menu-icon {
+    display: none;
+  }
+}
+
+@media screen and ($tablet) {
+  .TopArea {
+    padding: 0rem 3rem;
+
+    .TopArea__menu-icon {
+      display: none;
+    }
+  }
+}
+
+@media screen and ($desktop) {
+  .TopArea {
+    padding: 0rem 5rem;
+
+    .TopArea__menu-icon {
+      display: none;
+    }
+  }
+}

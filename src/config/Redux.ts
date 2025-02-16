@@ -1,3 +1,4 @@
+// Configura o store do Redux
 import { configureStore } from '@reduxjs/toolkit';
 
 import reducers from '@config/Reducers';

@@ -1,0 +1,47 @@
+.MobileMenu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 1rem;
+  background: $darkGray;
+  font-weight: 300;
+  position: absolute;
+  z-index: 1;
+
+  animation: slideDown .2s ease-in-out;
+
+  .MobileMenu__row-bar {
+    display: block;
+    margin: 0 auto 1rem auto;
+    height: 1px;
+    width: 90%;
+    background-color: $white;
+  }
+
+  .MobileMenu__link{
+    margin: 0.5rem auto;
+    color: $white;
+    font-size: 1em;
+    font-weight: 400;
+
+    cursor: pointer;
+  }
+}
+
+@media screen and ($tablet) {
+  .MobileMenu {
+    display: none;
+  }
+}
+
+@media screen and ($desktop){
+  .MobileMenu {
+    display: none;
+  }
+}
+
+.MobileMenu--closing {
+  animation: slideUp 0.5s ease-in-out;
+}
+

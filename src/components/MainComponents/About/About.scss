@@ -1,0 +1,61 @@
+.About {
+  width: 100%;
+  background: $background;
+  padding-top: 10rem;
+  padding-right: auto;
+  padding-bottom: 8rem;
+  padding-left: auto;
+
+  .About__content {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: 100%;
+    background: $lightGray;
+
+    .About__topics {
+      display: flex;
+      align-items: center;
+      list-style: none;
+
+      .About__item {
+        padding: 1rem;
+        font-weight: 500;
+        color: $darkGray;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $mediumGray;
+        }
+      }
+
+      .active {
+        background-color: $mediumGray;
+      }
+    }
+
+      .About__text {
+        font-weight: 300;
+        line-height: 1.5rem;
+      }
+  }
+}
+
+@media screen and ($mobileHorizontal) {
+  .About__content {
+    max-width: 80%;
+  }
+}
+
+@media screen and ($tablet) {
+  .About__content {
+    max-width: 80%;
+  }
+}
+
+@media screen and ($desktop) {
+  .About__content {
+    max-width: 80%;
+  }
+}

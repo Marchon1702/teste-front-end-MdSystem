@@ -1,0 +1,80 @@
+.Banner {
+  width: 100%;
+  background-image: url('https://www.mdsystemweb.com.br/projects/api/v1/test/images/banner.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+
+  .Banner__blue-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #19376e9f;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+
+    .Banner__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 13rem;
+      padding-right: 2rem;
+      padding-bottom: 6.5rem;
+      padding-left: 2rem;
+      color: $white;
+      z-index: 2;
+
+      .Banner__title {
+        max-width: 400px;
+        text-align: center;
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        line-height: 2.7rem;
+      }
+
+      .Banner__subtitle {
+        max-width: 300px;
+        text-align: center;
+        line-height: 2rem;
+        font-size: 1.5em;
+        margin-bottom: 2rem;
+      }
+
+      .Banner__button {
+        padding: 1rem 3rem;
+        font-size: 1em;
+        font-weight: 200;
+        border: none;
+        border-radius: 0.5rem;
+        background-color: $background;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and ($tablet) {
+  .Banner {
+    .Banner__blue-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 1rem;
+    }
+  }
+}
+
+@media screen and ($desktop) {
+  .Banner {
+    .Banner__blue-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 2rem;
+    }
+  }
+}

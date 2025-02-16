@@ -1,14 +1,16 @@
 import React from 'react';
 
-import HomeMainContainer from '@features/home/MainContainer';
+import HeaderContainer from '@features/home/HeaderContainer';
+import MainContainer from '@features/home/MainContainer';
+import FooterContainer from '@features/home/FooterContainer';
 
-import MdswLogo from './images/logo.png';
 import './index.scss';
 
 const HomeView = (): JSX.Element => (
   <div className="HomeView">
-    <img src={MdswLogo} alt="Logo MdsystemWeb" />
-    <HomeMainContainer />
+    <HeaderContainer />
+    <MainContainer />
+    <FooterContainer />
   </div>
 );
 

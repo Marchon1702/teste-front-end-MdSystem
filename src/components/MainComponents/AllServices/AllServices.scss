@@ -1,0 +1,70 @@
+.AllServices {
+  width: 100%;
+  background: $background;
+  padding-right: auto;
+  padding-bottom: 12rem;
+  padding-left: auto;
+
+  .AllServices__carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .AllServices__text {
+      padding: 1.5rem;
+      font-weight: 300;
+      line-height: 1.5rem;
+    }
+
+    .AllServices__arrow {
+      display: block;
+      height: 200px;
+      width: 200px;
+      color: $primary;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and ($mobileHorizontal) {
+  .AllServices__arrow {
+    display: block;
+    height: 100px !important;
+    width: 100px !important;
+    color: $primary;
+  }
+}
+
+@media screen and ($tablet) {
+  .AllServices__carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    .AllServices__arrow {
+      display: block;
+      height: 60px !important;
+      width: 60px !important;
+      color: $primary;
+    }
+  }
+}
+
+@media screen and ($desktop) {
+  .AllServices__carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5rem;
+    padding-right: 5rem;
+
+    .AllServices__arrow {
+      display: block;
+      height: 40px !important;
+      width: 40px !important;
+      color: $primary;
+    }
+  }
+}

@@ -24,6 +24,13 @@ api.interceptors.request.use((config: InternalAxiosRequestConfig): InternalAxios
 });
 // #endregion
 
+//#region Requisições dos conteúdos
+export const getContent: AxiosInstance = axios.create({
+  baseURL: "https://www.mdsystemweb.com.br/projects/api/v1/test/layout.php",
+  timeout: 10000
+})
+//#endregion
+
 export default {
   api,
 };
