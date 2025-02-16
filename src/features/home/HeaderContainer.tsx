@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@hooks/Redux';
 
 export default function HomeHeaderContainer() {
-  // As chamadas da API devem ser feitas aqui...
 
   const dispatch = useAppDispatch();
   const entries = useSelector(entriesSelector);
@@ -19,7 +18,6 @@ export default function HomeHeaderContainer() {
     }
   }, [dispatch]);
 
-  // Extraindo os dados do Redux
   const headerContent = entries[0]?.header ?? null;
   const bannerContent = entries[0]?.banner[0] ?? null;
 

@@ -1,79 +1,67 @@
-# Quer ser desenvolvedor frontend na MDsystem Web?
+# Conclusão do desafio da MdSystem
 
-Criamos este teste para avaliar seus conhecimentos e habilidades frontend (HTML, CSS e JavaScript).
+## Estrutura Inicial
+A estrutura de pastas e configurações originais foram mantidas.
 
-## O teste
+## Estilos Globais
 
-O desafio é tornar o layout abaixo em uma página funcional.
-Não existe certo ou errado, queremos ver como você se sai em situações reais, como este desafio.
+### Adições
+Nos estilos foram adicionadas algumas variáveis de cor adicionais que estavam no design mas não estavam no arquivo.
 
-Portanto, dê o seu melhor!
+### Mudanças
+Nos breakpoints, o `$mobile` foi alterado para `575.98px` para corrigir a sequência de largura das telas.
 
-:warning: **OBS:** Os layouts podem ser encontrados na pasta **layout**
+## Estrutura dos Componentes
 
-![Layout](layout/Mobile.png)
-![Layout](layout/Desktop.png)
+Em `features/home` temos os containers principais de cada parte da página. Dentro deles, é feita a requisição para a obtenção dos arquivos necessários de cada seção.
 
-## Instruções
+### COMPONENTES PRINCIPAIS
+- `HeaderContainer`
+- `MainContainer`
+- `FooterContainer`
 
-![Layout](layout/Architecture.png)
+### COMPONENTES DE SEÇÃO
 
-- O conteúdo não é estático. Você deve fazer consulta a API.
-- URL API
-  - https://www.mdsystemweb.com.br/projects/api/v1/test/layout.php
-- Fonte padrão: "Poppins".
-- No CSS usar (Flex box) E Arquitetura BEM.
-- Crie uma documentação simples comentando sobre as tecnologias e soluções adotadas.
-- Realize o desenvolvimento dentro da pasta src
-- Caminho para configuração da api src/config/App.ts
-- Chamadas na api são feitas apenas dentro dos arquivos referentes as features, assim, todo container que precisa de alguma integração
-  com api criasse uma Feature referente a ele
-- O arquivo src/features/home/Service.ts dentro das Features é onde pode se configurar as rotas de requisição
-- O arquivo src/features/home/Slice.ts é onde você configura o redux para fazer as request na api e salvar os dados
-- O arquivo src/features/home/Types.ts (em projetos typescript) é onde criasse os tipos dos dados para os dados da api
-- para facilitar a construção das tipagens recomendo o site que passa os json da api para tipos do typescript:
-  https://transform.tools/json-to-typescript
+#### HeaderContainer
+- `TopArea`
+- `Banner`
+- `DesktopMenu`
+- `MobileMenu`
 
-- Caminho para criação de componets, src/components
-- Configurações globais CSS src/stylesheets
+#### MainContainer
+- `About`
+- `AllServices`
 
-## Requisitos
+#### FooterContainer
+- `FooterContent`
 
-- Design responsivo nos breakpoints, mobile first
-- Suporte para IE, Chrome, Safari, Firefox
+## Fluxo de Código
+1. Os **COMPONENTES PRINCIPAIS** em `/features/home` fazem a requisição com a API, usando o método estático `HomeService.all` do arquivo `Services.ts`.
+2. Essa requisição é chamada dentro de `fetchAll`, que foi criada em `HomeSlice` no arquivo `Slice.ts`, usando os reducers para gerenciar os estados da requisição e adicionar os valores em `entries` no `State`.
+3. Em `views` são importados os **COMPONENTES PRINCIPAIS**, que comportam suas seções dentro deles.
+4. Os **COMPONENTES PRINCIPAIS** passam como `props` os valores referentes a cada componente dentro deles (`About`, `AllServices`, etc.).
+5. Os **COMPONENTES DE SEÇÃO** fazem uma verificação inicial para se certificar de só renderizar quando o valor for diferente de `null` ou `undefined`.
+6. Os **COMPONENTES DE SEÇÃO** se renderizam na página.
 
-## Diferenciais
+## Soluções
+- **Adaptabilidade:** Menu dinâmico para a versão mobile.
+- **Modularização:** Foram criados componentes reutilizáveis em diferentes partes do conteúdo principal, ex: `SectionTitle`, `MainSection`.
+- **Interação Dinâmica:** Os componentes `About` e `AllServices` interagem de acordo com a ação do usuário.
+- **Tipagem:** Foram criadas interfaces de acordo com os tipos de dados que a API retorna.
+- **Conversão:** Textos em formatos diferentes foram convertidos com `MDX` e `HtmlToMd`.
+- **Responsividade:** Layout responsivo e fiel ao design enviado.
 
-- Uso de pré-processador CSS (Sass)
+## Tecnologias usadas
+- HTML
+- CSS
+- Node.js
+- React
+- TypeScript
+- Redux
 
-## O que será avaliado
+## Bibliotecas adicionadas
+- `react-scroll`: Para navegação suave.
+- `react-icons`: Para ícones.
+- `html-to-md`: Para conversão de arquivo para formato MDX.
+- `cross-env`: Para o script `start` funcionar em Windows e Linux.
 
-- Estrutura e organização do código e dos arquivos
-- Soluções adotadas
-- Qualidade
-- Fidelidade ao layout
-- Enfim, tudo será observado e levado em conta
-
-## Como iniciar o desenvolvimento
-
-- Node v20.18.1
-- Fork este repositório na sua conta do Github
-- Crie uma branch com o nome **desafio**
-- Instale as dependências
-
-```
-yarn
-```
-
-- Rode a aplicação
-
-```
-yarn start
-```
-
-- Acesse http://localhost:4000
-
-## Como enviar seu teste
-
-- Envie um email para [diogo.alves@mdsystemweb.com.br] com o link do seu repositório
-- Se o seu repositório for privado, solicite os emails das pessoas responsáveis para conceder acesso de leitura ao seu repositório.
